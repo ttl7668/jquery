@@ -1,0 +1,132 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="js/jquery-3.5.1.js"></script>
+    <title>Document</title>
+
+    
+    <style type="text/css">
+        .center {
+            text-align: center;
+        }
+        .content,
+        .content .left,
+        .content .right {
+            width: 50%;
+            margin: 0 auto;
+            box-sizing: border-box;
+            padding: 5px;
+        }
+        .content {
+            overflow: hidden;
+            border: 1px solid #777;
+        }
+        .content .left,
+        .content .right {
+            float: left;
+        }
+        
+        .left .inner,
+        .right .inner {
+            border: 1px solid #777;
+            height: 300px;
+        }
+        
+        img {
+            width: 100%;
+            height: 100%;
+        }
+        
+    </style>
+    
+</head>
+<body>
+    
+    <header>
+        <div class="center">
+            <h2>야간모드</h2>
+            <button type="button" id="btn1" class="dark">어둡게보기</button>
+            <button type="button" id="btn2" class="name">이름보기</button>
+            <hr>
+        </div>
+    </header>
+    
+    <section>
+        <div class="content">
+            <div class="left">
+                <div class="inner"><img src="profile.png"></div>
+            </div>
+            <div class="right">
+                <div class="inner">
+                    <p>자바스크립트는 객체 기반의 스크립트 프로그래밍 언어이다. 이 언어는 웹 브라우저 내에서 주로 사용하며, 다른 응용 프로그램의 내장 객체에도 접근할 수 있는 기능을 가지고 있다. 또한 Node.js와 같은 런타임 환경과 같이 서버 사이드 네트워크 프로그래밍에도 사용되고 있다</p>
+                    <a href="https://www.naver.com">위키백과</a>
+                </div>
+            </div>            
+        </div>
+    </section>
+    
+    <script>
+
+            $("#btn1").click(function(){
+                if($("#btn1").attr("class") === "dark"){
+
+                    $("#btn1").html("밝게");
+                    $("#btn1").attr("class","white");
+                    $("body").css({"backgroundColor": "black", "color": "white"});
+                    // $("p,h2,a").each(function(index,value){
+                    //     console.log(index)
+                    //     console.log(value)
+                    // }
+
+                }else{
+                    $("#btn1").html("어둡게보기");
+                    $("#btn1").attr("class","dark");
+                    $("body").css({"backgroundColor": "white", "color": "black"});
+                }
+            })
+
+            $("#btn2").click(function(){
+                if($("#btn2").attr("class") === "name"){
+
+                    $("#btn2").html("내용보기");
+                    $("#btn2").attr("class","cont");
+                    $(".inner p").html("홍길동");
+                    $(".inner a").css("display","none");
+                }else{
+                    $("#btn2").html("이름보기");
+                    $("#btn2").attr("class","name");
+                    $(".inner p").html("자바스크립트는 객체 기반의 스크립트 프로그래밍 언어이다. 이 언어는 웹 브라우저 내에서 주로 사용");
+                    $(".inner a").css("display","inline");
+
+                
+                }
+
+            })
+              
+        
+            
+    
+  
+
+
+
+        
+    </script>
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</body>
+</html>
